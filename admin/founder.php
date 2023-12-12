@@ -1,6 +1,7 @@
 <?php
 include './partials/head.php';
-include '../config/function_library.php';
+include '../config/connection.php';
+include '../config/auth.php';
 ?>
 
 <body id="page-top">
@@ -25,12 +26,12 @@ include '../config/function_library.php';
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Daftar Transaksi</h1>
+                    <h1 class="h3 mb-2 text-gray-800">Daftar Founder</h1>
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Manajemen Transaksi</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Manajemen Founder</h6>
                         </div>
                         <div class="card-body">
                             <?php 
@@ -43,45 +44,31 @@ include '../config/function_library.php';
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th width="30%">Film</th>
-                                            <th style="text-align: center;">Studio</th>
-                                            <th style="text-align: center;">Total Bayar</th>
-                                            <th style="text-align: center;">Status</th>
-                                            <th style="text-align: center;">Metode Bayar</th>
+                                            <th width="15%" style="text-align: center;">Foto</th>
+                                            <th width="30%">Nama</th>
+                                            <th width="15%" style="text-align: center;">Jabatan</th>
+                                            <th width="2%" style="text-align: center;">Status</th>
                                             <th width="20%" style="text-align: center;">Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php
-                                            $query = "SELECT * FROM transactions ORDER BY id DESC";
+                                            $query = "SELECT * FROM founders WHERE status <> 'deleted' ORDER BY id DESC";
                                             $result = $db->query($query);
                                             
 
                                             if ($result->num_rows > 0) {
                                                 // Output data of each row
                                                 while ($row = $result->fetch_assoc()) {
-                                                    $playing_id = $row['playing_id'];
-                                                    $playing = global_select_single('playings', '*', "id=$playing_id");
-                                                    $film_id = $playing['film_id'];
-                                                    $film = global_select_single('movies', '*', "id=$film_id");
-                                                    $studio_id = $playing['studio_id'];
-                                                    $studio = global_select_single('studios', '*', "id=$studio_id");
-                                                    if ($row['status'] === 'done') {
-                                                        $status = 'text-success';
-                                                    } else if ($row['status'] === 'process'){
-                                                        $status = 'text-warning';
-                                                    } else {
-                                                        $status = 'text-danger';
-                                                    }
                                                     ?>
                                                         <tr>
-                                                            <td><?php echo $film['title'] ?></td>
-                                                            <td style="text-align: center;"><?php echo $studio['name'] ?></td>
-                                                            <td style="text-align: center;">Rp. <?php echo number_format($row['total_price']) ?></td>
-                                                            <td style="text-align: center;" class="<?php echo $status ?>"><?php echo $row['status'] ?></td>
-                                                            <td style="text-align: center;"><?php echo $row['method'] ?></td>
+                                                            <td style="text-align: center;"> <img height="50" src="<?php echo $baseUrl .$row['image'] ?>"> </td>
+                                                            <td><?php echo $row['name'] ?></td>
+                                                            <td style="text-align: center;"><?php echo $row['type'] ?></td>
+                                                            <td><?php echo $row['status'] ?></td>
                                                             <td style="text-align: center;">
-                                                                <a href="<?php echo './show-transaction.php?id='.$row['id'] ?>" class="btn btn-info btn-sm">Detail</a>
+                                                                <a href="<?php echo './edit-founder.php?id='.$row['id'] ?>" class="btn btn-warning btn-sm">Detail</a>
+                                                                <a href="<?php echo './lib/delete_founder.php?id='.$row['id'] ?>" class="btn btn-danger btn-sm">Hapus</a>
                                                             </td>
                                                         </tr>
                                                     <?php

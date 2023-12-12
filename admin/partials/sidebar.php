@@ -34,7 +34,7 @@
         <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                 <i class="fas fa-fw fa-tv"></i>
-                <span>Banner</span>
+                <span>Banners</span>
             </a>
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
@@ -48,13 +48,13 @@
         <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseStudio" aria-expanded="true" aria-controls="collapseStudio">
                 <i class="fas fa-fw fa-film"></i>
-                <span>Studio</span>
+                <span>Founders</span>
             </a>
             <div id="collapseStudio" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Menu:</h6>
-                    <a class="collapse-item" href="studio.php">Daftar Studio</a>
-                    <a class="collapse-item" href="add-studio.php">Tambah Studio</a>
+                    <a class="collapse-item" href="founder.php">Daftar Founder</a>
+                    <a class="collapse-item" href="add-founder.php">Tambah Founder</a>
                 </div>
             </div>
         </li>

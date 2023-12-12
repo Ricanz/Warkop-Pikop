@@ -5,7 +5,7 @@ include '../config/function_library.php';
 if (isset($_GET['id'])) {
     $id = urldecode($_GET['id']);
 }
-$data = global_select_single('banners', '*', "id='$id'");
+$data = global_select_single('founders', '*', "id='$id'");
 
 ?>
 
@@ -32,19 +32,19 @@ $data = global_select_single('banners', '*', "id='$id'");
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Ubah Banner</h1>
+                    <h1 class="h3 mb-2 text-gray-800">Ubah Founder</h1>
 
 
                     <div class="card shadow mb-4 p-4">
-                        <form action="./lib/do_update_banner.php" method="POST" class="form-group" enctype="multipart/form-data">
+                        <form action="./lib/do_update_founder.php" method="POST" class="form-group" enctype="multipart/form-data">
                             <div class="form-group row">
                                 <div class="col-sm-12 mb-2">
                                     <input type="hidden" class="form-control" name="id" id="id" value="<?php echo $data['id'] ?>">
-                                    <label for="title">Judul</label>
-                                    <input type="text" class="form-control" name="title" id="title" value="<?php echo $data['title'] ?>">
+                                    <label for="title">Nama</label>
+                                    <input type="text" class="form-control" name="title" id="title" value="<?php echo $data['name'] ?>">
                                 </div>
                                 <div class="col-sm-12 mb-2">
-                                    <label for="poster">Banner</label>
+                                    <label for="poster">Foto</label>
                                     <input type="hidden" name="def_poster" value="<?php echo $data['image'] ?>">
                                     <input type="file" class="form-control" name="poster" id="poster" accept="image/*,application/pdf" onchange="displayImage(this)" />
                                     <?php 
@@ -54,6 +54,14 @@ $data = global_select_single('banners', '*', "id='$id'");
                                             echo '<img id="uploadedImage" src="'. $baseUrl . $data['image'].'" alt="Uploaded Image" style="width: 300px; max-width: 100%; margin-top: 10px;">';
                                         }
                                     ?>
+                                </div>
+                                <div class="col-sm-12 mb-2">
+                                    <label for="type">Jabatan</label>
+                                    <select name="type" id="type" class="form-control">
+                                        <option value="<?php echo $data['type'] ?>" selected><?php echo $data['type'] !== null ?  $data['type'] : "-- Pilih Jabatan --" ?></option>
+                                        <option value="founder">Founder</option>
+                                        <option value="co-founder">Co-Founder</option>
+                                    </select>
                                 </div>
                                 <div class="col-sm-12 mb-2">
                                     <label for="status">Status</label>
