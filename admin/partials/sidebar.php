@@ -58,6 +58,11 @@
                 </div>
             </div>
         </li>
+        <li class="nav-item">
+        <a class="nav-link" href="tentang.php">
+            <i class="fas fa-fw fa-chair"></i>
+            <span>Tentang</span></a>
+    </li>
     <?php
     }
     ?>
