@@ -59,10 +59,15 @@
             </div>
         </li>
         <li class="nav-item">
-        <a class="nav-link" href="tentang.php">
-            <i class="fas fa-fw fa-chair"></i>
-            <span>Tentang</span></a>
-    </li>
+            <a class="nav-link" href="tentang.php">
+                <i class="fas fa-fw fa-chair"></i>
+                <span>Tentang</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="products.php">
+                <i class="fas fa-fw fa-chair"></i>
+                <span>Franchise</span></a>
+        </li>
     <?php
     }
     ?>
