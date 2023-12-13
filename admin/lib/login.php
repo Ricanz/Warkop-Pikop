@@ -17,7 +17,7 @@ if (isset($_POST['submit'] )) {
             $_SESSION['email'] = $email;
             $_SESSION['id'] = $row['id'];
             $_SESSION['role'] = $row['role'];
-            header("Location: ../index.php");
+            header("Location: ../products.php");
             exit;
         } else {
             echo "Password salah.";
