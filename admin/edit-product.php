@@ -56,7 +56,7 @@ $data = global_select_single('products', '*', "id='$id'");
                                     ?>
                                 </div>
                                 <div class="col-sm-12 mb-2">
-                                    <label for="description">Judul</label>
+                                    <label for="description">Deskripsi</label>
                                     <textarea class="form-control"  name="description" id="description" cols="30" rows="10"><?php echo $data['description'] ?></textarea>
                                 </div>
                                 <div class="col-sm-12 mb-2">

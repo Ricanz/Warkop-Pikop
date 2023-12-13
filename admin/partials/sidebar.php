@@ -68,6 +68,19 @@
                 <i class="fas fa-fw fa-chair"></i>
                 <span>Franchise</span></a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBerita" aria-expanded="true" aria-controls="collapseBerita">
+                <i class="fas fa-fw fa-film"></i>
+                <span>Berita</span>
+            </a>
+            <div id="collapseBerita" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <h6 class="collapse-header">Menu:</h6>
+                    <a class="collapse-item" href="berita.php">Daftar Berita</a>
+                    <a class="collapse-item" href="add-berita.php">Tambah Berita</a>
+                </div>
+            </div>
+        </li>
     <?php
     }
     ?>
