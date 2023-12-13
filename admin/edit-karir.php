@@ -1,6 +1,12 @@
 <?php
 include './partials/head.php';
-include '../config/connection.php';
+include '../config/function_library.php';
+
+if (isset($_GET['id'])) {
+    $id = urldecode($_GET['id']);
+}
+$data = global_select_single('careers', '*', "id='$id'");
+
 ?>
 
 <body id="page-top">
@@ -26,24 +32,28 @@ include '../config/connection.php';
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Tambah Berita</h1>
+                    <h1 class="h3 mb-2 text-gray-800">Ubah Karir</h1>
 
 
                     <div class="card shadow mb-4 p-4">
-                        <form action="./lib/do_add_berita.php" method="POST" class="form-group" enctype="multipart/form-data">
+                        <form action="./lib/do_update_karir.php" method="POST" class="form-group" enctype="multipart/form-data">
                             <div class="form-group row">
                                 <div class="col-sm-12 mb-2">
-                                    <label for="poster">Foto</label>
-                                    <input type="file" class="form-control" name="poster" id="uploadInput" accept="image/*,application/pdf" onchange="displayImage(this)" />
-                                    <img id="uploadedImage" src="" alt="Uploaded Image" style="width: 300px; max-width: 100%; display: none; margin-top: 10px;">
-                                </div>
-                                <div class="col-sm-12 mb-2">
+                                    <input type="hidden" class="form-control" name="id" id="id" value="<?php echo $data['id'] ?>">
                                     <label for="title">Judul</label>
-                                    <input type="text" class="form-control" name="title" id="title" placeholder="Masukkan Judul Berita">
+                                    <input type="text" class="form-control" name="title" id="title" value="<?php echo $data['title'] ?>">
                                 </div>
                                 <div class="col-sm-12 mb-2">
                                     <label for="description">Deskripsi</label>
-                                    <textarea name="description" id="description"  class="form-control ckeditor"  cols="30" rows="10"></textarea>
+                                    <textarea class="form-control ckeditor"  name="description" id="description" cols="30" rows="10"><?php echo $data['description'] ?></textarea>
+                                </div>
+                                <div class="col-sm-12 mb-2">
+                                    <label for="status">Status</label>
+                                    <select name="status" id="status" class="form-control">
+                                        <option value="<?php echo $data['status'] ?>" selected><?php echo $data['status'] !== null ?  $data['status'] : "-- Pilih Status --" ?></option>
+                                        <option value="active">Active</option>
+                                        <option value="inactive">Inactive</option>
+                                    </select>
                                 </div>
                             </div>
                             <hr>
@@ -72,6 +82,7 @@ include '../config/connection.php';
     <?php
     include './partials/scripts.php'
     ?>
+
     <script>
         function displayImage(input) {
             var uploadedImage = document.getElementById('uploadedImage');

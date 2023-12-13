@@ -51,7 +51,7 @@ $data = global_select_single('products', '*', "id='$id'");
                                         if ($data['image'] === null or $data['image'] === '') {
                                             echo '<img id="uploadedImage" src="" alt="Uploaded Image" style="width: 300px; max-width: 100%; display: none; margin-top: 10px;">';
                                         } else {
-                                            echo '<img id="uploadedImage" src="'. $baseUrl . $data['image'].'" alt="Uploaded Image" style="width: 300px; max-width: 100%; margin-top: 10px;">';
+                                           echo '<img id="uploadedImage" src="'. $baseUrl . $data['image'].'" alt="Uploaded Image" style="width: 300px; max-width: 100%; margin-top: 10px;">';
                                         }
                                     ?>
                                 </div>

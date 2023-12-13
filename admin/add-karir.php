@@ -26,20 +26,15 @@ include '../config/connection.php';
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Tambah Berita</h1>
+                    <h1 class="h3 mb-2 text-gray-800">Tambah Karir</h1>
 
 
                     <div class="card shadow mb-4 p-4">
-                        <form action="./lib/do_add_berita.php" method="POST" class="form-group" enctype="multipart/form-data">
+                        <form action="./lib/do_add_karir.php" method="POST" class="form-group" enctype="multipart/form-data">
                             <div class="form-group row">
                                 <div class="col-sm-12 mb-2">
-                                    <label for="poster">Foto</label>
-                                    <input type="file" class="form-control" name="poster" id="uploadInput" accept="image/*,application/pdf" onchange="displayImage(this)" />
-                                    <img id="uploadedImage" src="" alt="Uploaded Image" style="width: 300px; max-width: 100%; display: none; margin-top: 10px;">
-                                </div>
-                                <div class="col-sm-12 mb-2">
                                     <label for="title">Judul</label>
-                                    <input type="text" class="form-control" name="title" id="title" placeholder="Masukkan Judul Berita">
+                                    <input type="text" class="form-control" name="title" id="title" placeholder="Masukkan Judul Karir">
                                 </div>
                                 <div class="col-sm-12 mb-2">
                                     <label for="description">Deskripsi</label>
