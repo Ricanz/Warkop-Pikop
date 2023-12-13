@@ -42,8 +42,8 @@ $data = global_select_single('about', '*', "slug='about'");
                                     <input type="text" class="form-control" name="title" id="title" value="<?php echo $data['title'] ?>">
                                 </div>
                                 <div class="col-sm-12 mb-2">
-                                    <label for="description">Judul</label>
-                                    <textarea class="form-control"  name="description" id="description" cols="30" rows="10"><?php echo $data['description'] ?></textarea>
+                                    <label for="description">Deskripsi</label>
+                                    <textarea class="form-control ckeditor"  name="description" id="description" cols="30" rows="10"><?php echo $data['description'] ?></textarea>
                                 </div>
                             </div>
                             <hr>

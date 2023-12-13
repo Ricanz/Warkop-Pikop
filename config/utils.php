@@ -49,9 +49,11 @@ function uploadFoto($file, $targetDirectory, $allowedExtensions, $maxFileSize)
 
     // Memeriksa apakah $uploadOk adalah true sebelum mengunggah
     if ($uploadOk) {
+        $extension = get_file_extension($file['name']);
         // Memindahkan file ke direktori target
-        $targetFile = $targetDirectory . basename($file['name'] . time());
-        $pathFile = 'uploads/' . basename($file['name'] . time());
+        $unique = 'pikop-'.time() .'-'. uniqid(). '.'.$extension;
+        $targetFile = $targetDirectory . $unique;
+        $pathFile = 'uploads/' . $unique;
         if (move_uploaded_file($file['tmp_name'], $targetFile)) {
             echo "File berhasil diunggah.";
             $uploadPath = $pathFile;
@@ -61,6 +63,11 @@ function uploadFoto($file, $targetDirectory, $allowedExtensions, $maxFileSize)
     }
 
     return $uploadPath;
+}
+
+function get_file_extension($filename) {
+    $path_info = pathinfo($filename);
+    return $path_info['extension'];
 }
 
 

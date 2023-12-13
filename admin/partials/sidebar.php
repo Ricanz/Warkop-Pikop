@@ -64,6 +64,11 @@
                 <span>Tentang</span></a>
         </li>
         <li class="nav-item">
+            <a class="nav-link" href="kontak.php">
+                <i class="fas fa-fw fa-chair"></i>
+                <span>Kontak</span></a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link" href="products.php">
                 <i class="fas fa-fw fa-chair"></i>
                 <span>Franchise</span></a>
