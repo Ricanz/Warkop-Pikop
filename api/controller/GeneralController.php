@@ -43,3 +43,47 @@ function getCoFounder()
         ApiResponse::sendErrorResponse(null, "Gagal mengambil data Co-Founder");
     }
 }
+
+function getContact()
+{
+    try {
+        $data = global_select_single("contact", "*", "id='1'", "ID DESC ");
+
+        ApiResponse::sendResponse($data);
+    } catch (\Throwable $th) {
+        ApiResponse::sendErrorResponse(null, "Gagal mengambil data Contact");
+    }
+}
+
+function franchiseList()
+{
+    try {
+        $data = global_select("products", "*", false, "ID DESC ");
+
+        ApiResponse::sendResponse($data);
+    } catch (\Throwable $th) {
+        ApiResponse::sendErrorResponse(null, "Gagal mengambil data Franchise");
+    }
+}
+
+function newsList()
+{
+    try {
+        $data = global_select("news", "*", false, "ID DESC ");
+
+        ApiResponse::sendResponse($data);
+    } catch (\Throwable $th) {
+        ApiResponse::sendErrorResponse(null, "Gagal mengambil data Berita");
+    }
+}
+
+function careerList()
+{
+    try {
+        $data = global_select("careers", "*", false, "ID DESC ");
+
+        ApiResponse::sendResponse($data);
+    } catch (\Throwable $th) {
+        ApiResponse::sendErrorResponse(null, "Gagal mengambil data Karir");
+    }
+}

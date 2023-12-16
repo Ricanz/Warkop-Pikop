@@ -62,6 +62,22 @@ get($baseUrl . 'co-founder', function () {
     getCoFounder();
 });
 
+get($baseUrl . 'contact', function () {
+    getContact();
+});
+
+get($baseUrl . 'franchise', function () {
+    franchiseList();
+});
+
+get($baseUrl . 'news', function () {
+    newsList();
+});
+
+get($baseUrl . 'careers', function () {
+    careerList();
+});
+
 // Jika tidak ada route yang cocok, kirim status 404 Not Found
 header("HTTP/1.1 404 Not Found");
 echo '404 Not Found';
