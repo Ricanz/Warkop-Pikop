@@ -8,8 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-
-    <title>SB Admin 2 - Login</title>
+    
+    <link rel="icon" href="../admin/assets/img/pikop-1702437000-65792088e2579.png" type="image/png">
+    <title>Warkop Pikop - Dashboard</title>
 
     <!-- Custom fonts for this template-->
     <link href="./assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
