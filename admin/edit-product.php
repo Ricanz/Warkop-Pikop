@@ -51,13 +51,13 @@ $data = global_select_single('products', '*', "id='$id'");
                                         if ($data['image'] === null or $data['image'] === '') {
                                             echo '<img id="uploadedImage" src="" alt="Uploaded Image" style="width: 300px; max-width: 100%; display: none; margin-top: 10px;">';
                                         } else {
-                                            echo '<img id="uploadedImage" src="'. $baseUrl . $data['image'].'" alt="Uploaded Image" style="width: 300px; max-width: 100%; margin-top: 10px;">';
+                                           echo '<img id="uploadedImage" src="'. $baseUrl . $data['image'].'" alt="Uploaded Image" style="width: 300px; max-width: 100%; margin-top: 10px;">';
                                         }
                                     ?>
                                 </div>
                                 <div class="col-sm-12 mb-2">
-                                    <label for="description">Judul</label>
-                                    <textarea class="form-control"  name="description" id="description" cols="30" rows="10"><?php echo $data['description'] ?></textarea>
+                                    <label for="description">Deskripsi</label>
+                                    <textarea class="form-control ckeditor"  name="description" id="description" cols="30" rows="10"><?php echo $data['description'] ?></textarea>
                                 </div>
                                 <div class="col-sm-12 mb-2">
                                     <label for="status">Status</label>

@@ -1,11 +1,11 @@
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
         <div class="sidebar-brand-icon rotate-n-15">
             <i class="fas fa-laugh-wink"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">Bioskop <sup>Isma</sup></div>
+        <div class="sidebar-brand-text mx-3">Warkop <sup>Pikop</sup></div>
     </a>
 
     <!-- Divider -->
@@ -27,7 +27,7 @@
 
         <!-- Heading -->
         <div class="sidebar-heading">
-            Master Data
+            Landing Page
         </div>
 
         <!-- Nav Item - Pages Collapse Menu -->
@@ -47,7 +47,7 @@
 
         <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseStudio" aria-expanded="true" aria-controls="collapseStudio">
-                <i class="fas fa-fw fa-film"></i>
+                <i class="fas fa-fw fa-user"></i>
                 <span>Founders</span>
             </a>
             <div id="collapseStudio" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
@@ -60,83 +60,44 @@
         </li>
         <li class="nav-item">
             <a class="nav-link" href="tentang.php">
-                <i class="fas fa-fw fa-chair"></i>
+                <i class="fas fa-fw fa-table"></i>
                 <span>Tentang</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="kontak.php">
+                <i class="fas fa-fw fa-phone"></i>
+                <span>Kontak</span></a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="products.php">
                 <i class="fas fa-fw fa-chair"></i>
                 <span>Franchise</span></a>
         </li>
-    <?php
-    }
-    ?>
-
-    <!-- Divider -->
-    <hr class="sidebar-divider">
-
-    <!-- Heading -->
-    <div class="sidebar-heading">
-        Aktivitas
-    </div>
-
-    <!-- Nav Item - Tables -->
-    <li class="nav-item">
-        <a class="nav-link" href="playing.php">
-            <i class="fas fa-fw fa-chair"></i>
-            <span>Pemutaran Film</span></a>
-    </li>
-
-    <li class="nav-item">
-        <a class="nav-link" href="transaction.php">
-            <i class="fas fa-fw fa-table"></i>
-            <span>Transaksi</span></a>
-    </li>
-    <?php
-    if ($_SESSION['role'] === 'admin') {
-    ?>
-
         <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUser" aria-expanded="true" aria-controls="collapseUser">
-                <i class="fas fa-fw fa-user"></i>
-                <span>Pengguna</span>
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBerita" aria-expanded="true" aria-controls="collapseBerita">
+                <i class="fas fa-fw fa-film"></i>
+                <span>Berita</span>
             </a>
-            <div id="collapseUser" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div id="collapseBerita" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Menu:</h6>
-                    <a class="collapse-item" href="user.php?type=cashier">Daftar Kasir</a>
-                    <a class="collapse-item" href="add-user.php?type=cashier">Tambah Kasir</a>
-                    <a class="collapse-item" href="user.php?type=user">Daftar Pengguna</a>
-                    <a class="collapse-item" href="add-user.php?type=user">Tambah Pengguna</a>
+                    <a class="collapse-item" href="berita.php">Daftar Berita</a>
+                    <a class="collapse-item" href="add-berita.php">Tambah Berita</a>
                 </div>
             </div>
         </li>
-    <?php } ?>
-
-    <?php
-    if ($_SESSION['role'] === 'admin') {
-    ?>
-
-        <div class="sidebar-heading">
-            Laporan
-        </div>
-
         <li class="nav-item">
-            <a class="nav-link" href="report-total.php">
-                <i class="fas fa-fw fa-file"></i>
-                <span>Total Pendapatan</span></a>
-        </li>
-
-        <li class="nav-item">
-            <a class="nav-link" href="report-film.php">
-                <i class="fas fa-fw fa-file"></i>
-                <span>Transaksi Per Film</span></a>
-        </li>
-
-        <li class="nav-item">
-            <a class="nav-link" href="report-studio.php">
-                <i class="fas fa-fw fa-file"></i>
-                <span>Transaksi Per Studio</span></a>
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseKarir" aria-expanded="true" aria-controls="collapseKarir">
+                <i class="fas fa-fw fa-film"></i>
+                <span>Karir</span>
+            </a>
+            <div id="collapseKarir" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <h6 class="collapse-header">Menu:</h6>
+                    <a class="collapse-item" href="karir.php">Daftar Karir</a>
+                    <a class="collapse-item" href="add-karir.php">Tambah Karir</a>
+                </div>
+            </div>
         </li>
     <?php
     }

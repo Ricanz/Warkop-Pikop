@@ -46,9 +46,9 @@ include '../config/auth.php';
                                         <tr>
                                             <th width="15%" style="text-align: center;">Foto</th>
                                             <th width="30%">Nama</th>
-                                            <th width="15%" style="text-align: center;">Jabatan</th>
+                                            <th width="10%" style="text-align: center;">Jabatan</th>
                                             <th width="2%" style="text-align: center;">Status</th>
-                                            <th width="20%" style="text-align: center;">Aksi</th>
+                                            <th width="5%" style="text-align: center;">Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -68,7 +68,7 @@ include '../config/auth.php';
                                                             <td><?php echo $row['status'] ?></td>
                                                             <td style="text-align: center;">
                                                                 <a href="<?php echo './edit-founder.php?id='.$row['id'] ?>" class="btn btn-warning btn-sm">Detail</a>
-                                                                <a href="<?php echo './lib/delete_founder.php?id='.$row['id'] ?>" class="btn btn-danger btn-sm">Hapus</a>
+                                                                <!-- <a href="<?php echo './lib/delete_founder.php?id='.$row['id'] ?>" class="btn btn-danger btn-sm">Hapus</a> -->
                                                             </td>
                                                         </tr>
                                                     <?php

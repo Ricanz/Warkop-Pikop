@@ -46,7 +46,6 @@ function global_insert($table_name, $arr_data, $debug = false)
     }
 
     $result = $db->query($str);
-
     if ($result) {
         return true;
     } else {
