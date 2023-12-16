@@ -2,6 +2,30 @@
 include('connection.php');
 include('utils.php');
 
+function global_select($table_name, $select, $where = false, $order = false)
+{
+    global $db;
+
+    // Query MySQL SELECT
+    $sql_where = !$where ? "" : "WHERE $where";
+    $sql_order = !$order ? "" : "ORDER BY $order";
+    $query = "SELECT $select FROM $table_name $sql_where $sql_order";
+    $result = $db->query($query);
+
+    // Periksa apakah query berhasil
+    if (!$result) {
+        die("Query SELECT gagal: " . $db->error);
+    }
+
+    // Ambil hasil query
+    $data = array();
+    while ($row = $result->fetch_assoc()) {
+        $data[] = $row;
+    }
+
+    return $data;
+}
+
 function global_insert($table_name, $arr_data, $debug = false)
 {
     global $db;
