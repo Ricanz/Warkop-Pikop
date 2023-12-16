@@ -15,8 +15,8 @@ function redirectWithMessage($url, $message)
     $redirectUrl = $url . '?success=' . urlencode($message);
 
     // Perform the redirect
-    header("Location: " . $redirectUrl);
-    exit();
+    echo '<script>window.location.href = "'.$redirectUrl.'";</script>';
+    die();
 }
 
 function redirect($url)
@@ -25,8 +25,8 @@ function redirect($url)
     $redirectUrl = $url;
 
     // Perform the redirect
-    header("Location: " . $redirectUrl);
-    exit();
+    echo '<script>window.location.href = "'.$redirectUrl.'";</script>';
+    die();
 }
 
 function uploadFoto($file, $targetDirectory, $allowedExtensions, $maxFileSize)
