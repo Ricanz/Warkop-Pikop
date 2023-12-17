@@ -46,6 +46,7 @@ include '../config/auth.php';
                                         <tr>
                                             <th width="15%" style="text-align: center;">Image</th>
                                             <th width="40%">Judul</th>
+                                            <th width="15%" style="text-align: center;">Harga</th>
                                             <th width="2%" style="text-align: center;">Status</th>
                                             <th width="5%" style="text-align: center;">Aksi</th>
                                         </tr>
@@ -63,6 +64,7 @@ include '../config/auth.php';
                                                         <tr>
                                                             <td style="text-align: center;"> <img height="100" src="<?php echo $baseUrl .$row['image'] ?>"> </td>
                                                             <td><?php echo $row['title'] ?></td>
+                                                            <td style="text-align: center;">Rp. <?php echo $row['price'] ?></td>
                                                             <td><?php echo $row['status'] ?></td>
                                                             <td style="text-align: center;">
                                                                 <a href="<?php echo './edit-product.php?id='.$row['id'] ?>" class="btn btn-info btn-sm">Detail</a>

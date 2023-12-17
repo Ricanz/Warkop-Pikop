@@ -44,6 +44,10 @@ $data = global_select_single('products', '*', "id='$id'");
                                     <input type="text" class="form-control" name="title" id="title" value="<?php echo $data['title'] ?>">
                                 </div>
                                 <div class="col-sm-12 mb-2">
+                                    <label for="price">Harga</label>
+                                    <input type="text" class="form-control" name="price" id="price" value="<?php echo $data['price'] ?>">
+                                </div>
+                                <div class="col-sm-12 mb-2">
                                     <label for="poster">Banner</label>
                                     <input type="hidden" name="def_poster" value="<?php echo $data['image'] ?>">
                                     <input type="file" class="form-control" name="poster" id="poster" accept="image/*,application/pdf" onchange="displayImage(this)" />

@@ -26,6 +26,7 @@ if (isset($_POST['submit'])) {
     $id = $_POST['id'];
 
     $film['title'] = $_POST['title'];
+    $film['price'] = $_POST['price'];
     $film['status'] = $_POST['status'];
     $film['description'] = $_POST['description'];
     

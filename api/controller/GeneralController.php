@@ -3,7 +3,7 @@
 function getAbout()
 {
     try {
-        $data = global_select_single("about", "*", "slug='about'", "ID DESC ");
+        $data = global_select_single("about", "*", "slug='about' AND status='active'", "ID DESC ");
 
         ApiResponse::sendResponse($data);
     } catch (\Throwable $th) {
@@ -14,7 +14,7 @@ function getAbout()
 function bannerList()
 {
     try {
-        $data = global_select("banners", "*", false, "ID DESC ");
+        $data = global_select("banners", "*", "status='active'", "ID DESC ");
 
         ApiResponse::sendResponse($data);
     } catch (\Throwable $th) {
@@ -25,7 +25,7 @@ function bannerList()
 function getFounder()
 {
     try {
-        $data = global_select_single("founders", "*", "type='founder'", "ID DESC ");
+        $data = global_select_single("founders", "*", "type='founder' AND status='active'", "ID DESC ");
 
         ApiResponse::sendResponse($data);
     } catch (\Throwable $th) {
@@ -36,7 +36,7 @@ function getFounder()
 function getCoFounder()
 {
     try {
-        $data = global_select("founders", "*", "type='co-founder'", "ID DESC ");
+        $data = global_select("founders", "*", "type='co-founder' AND status='active'", "ID DESC ");
 
         ApiResponse::sendResponse($data);
     } catch (\Throwable $th) {
@@ -47,7 +47,7 @@ function getCoFounder()
 function getContact()
 {
     try {
-        $data = global_select_single("contact", "*", "id='1'", "ID DESC ");
+        $data = global_select_single("contact", "*", "id='1' AND status='active'", "ID DESC ");
 
         ApiResponse::sendResponse($data);
     } catch (\Throwable $th) {
@@ -58,7 +58,7 @@ function getContact()
 function franchiseList()
 {
     try {
-        $data = global_select("products", "*", false, "ID DESC ");
+        $data = global_select("products", "*", "status='active'", "ID DESC ");
 
         ApiResponse::sendResponse($data);
     } catch (\Throwable $th) {
@@ -69,7 +69,7 @@ function franchiseList()
 function newsList()
 {
     try {
-        $data = global_select("news", "*", false, "ID DESC ");
+        $data = global_select("news", "*", "status='active'", "ID DESC ");
 
         ApiResponse::sendResponse($data);
     } catch (\Throwable $th) {
@@ -80,7 +80,7 @@ function newsList()
 function careerList()
 {
     try {
-        $data = global_select("careers", "*", false, "ID DESC ");
+        $data = global_select("careers", "*", "status='active'", "ID DESC ");
 
         ApiResponse::sendResponse($data);
     } catch (\Throwable $th) {
