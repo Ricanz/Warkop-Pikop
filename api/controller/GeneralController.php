@@ -69,7 +69,7 @@ function franchiseList()
 function newsList()
 {
     try {
-        $data = global_select("news", "*", "status='active'", "ID DESC ");
+        $data = global_select("news", "*", "status='active'", "ID DESC LIMIT 6");
 
         ApiResponse::sendResponse($data);
     } catch (\Throwable $th) {
