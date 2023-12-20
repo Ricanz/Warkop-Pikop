@@ -54,7 +54,7 @@
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Menu:</h6>
                     <a class="collapse-item" href="founder.php">Daftar Founder</a>
-                    <a class="collapse-item" href="add-founder.php">Tambah Founder</a>
+                    <!-- <a class="collapse-item" href="add-founder.php">Tambah Founder</a> -->
                 </div>
             </div>
         </li>

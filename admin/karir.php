@@ -45,7 +45,8 @@ include '../config/auth.php';
                                     <thead>
                                         <tr>
                                             <th width="20%">Judul</th>
-                                            <th width="20%" style="text-align: left;">Short Description</th>
+                                            <th width="20%" style="text-align: left;">Description</th>
+                                            <th width="10%" style="text-align: left;">Link</th>
                                             <th width="2%" style="text-align: center;">Status</th>
                                             <th width="10%" style="text-align: center;">Aksi</th>
                                         </tr>
@@ -62,7 +63,8 @@ include '../config/auth.php';
                                                     ?>
                                                         <tr>
                                                             <td><?php echo $row['title'] ?></td>
-                                                            <td style="text-align: left;"><?php echo $row['short_description'] ?></td>
+                                                            <td style="text-align: left;"><?php echo $row['description'] ?></td>
+                                                            <td style="text-align: left;"><?php echo $row['link'] ?></td>
                                                             <td><?php echo $row['status'] ?></td>
                                                             <td style="text-align: center;">
                                                                 <a href="<?php echo './edit-karir.php?id='.$row['id'] ?>" class="btn btn-warning btn-sm">Detail</a>

@@ -37,6 +37,10 @@ include '../config/connection.php';
                                     <input type="text" class="form-control" name="title" id="title" placeholder="Masukkan Judul Karir">
                                 </div>
                                 <div class="col-sm-12 mb-2">
+                                    <label for="link">Link</label>
+                                    <input type="text" class="form-control" name="link" id="link" placeholder="Masukkan Link Karir">
+                                </div>
+                                <div class="col-sm-12 mb-2">
                                     <label for="description">Deskripsi</label>
                                     <textarea name="description" id="description"  class="form-control ckeditor"  cols="30" rows="10"></textarea>
                                 </div>

@@ -44,6 +44,10 @@ $data = global_select_single('careers', '*', "id='$id'");
                                     <input type="text" class="form-control" name="title" id="title" value="<?php echo $data['title'] ?>">
                                 </div>
                                 <div class="col-sm-12 mb-2">
+                                    <label for="link">Link</label>
+                                    <input type="text" class="form-control" name="link" id="link" value="<?php echo $data['link'] ?>">
+                                </div>
+                                <div class="col-sm-12 mb-2">
                                     <label for="description">Deskripsi</label>
                                     <textarea class="form-control ckeditor"  name="description" id="description" cols="30" rows="10"><?php echo $data['description'] ?></textarea>
                                 </div>

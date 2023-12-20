@@ -11,6 +11,7 @@ if (isset($_POST['submit'])) {
 
     $id = $_POST['id'];
     $career['title'] = $_POST['title'];
+    $career['link'] = $_POST['link'];
     $career['status'] = $_POST['status'];
     $career['description'] = $_POST['description'];
     $short_desc = preg_replace('#<[^>]+>#', '', $career['description']);
