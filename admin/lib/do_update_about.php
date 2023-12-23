@@ -10,6 +10,8 @@ $uploadedPath = null;
 if (isset($_POST['submit'])) {
     $about['title'] = $_POST['title'];
     $about['description'] = $_POST['description'];
+    $short_desc = preg_replace('#<[^>]+>#', '', $about['description']);
+    $about['short_description'] = $short_desc;
     $about['id'] = $_POST['id'];
     $id = $_POST["id"];
     
