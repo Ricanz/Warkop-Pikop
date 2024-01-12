@@ -69,9 +69,17 @@
                 <span>Kontak</span></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="products.php">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseProduk" aria-expanded="true" aria-controls="collapseProduk">
                 <i class="fas fa-fw fa-chair"></i>
-                <span>Franchise</span></a>
+                <span>Franchise</span>
+            </a>
+            <div id="collapseProduk" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <h6 class="collapse-header">Menu:</h6>
+                    <a class="collapse-item" href="products.php">Daftar Franchise</a>
+                    <a class="collapse-item" href="add-product.php">Tambah Franchise</a>
+                </div>
+            </div>
         </li>
         <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBerita" aria-expanded="true" aria-controls="collapseBerita">
