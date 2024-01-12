@@ -2,11 +2,6 @@
 include './partials/head.php';
 include '../config/function_library.php';
 
-if (isset($_GET['id'])) {
-    $id = urldecode($_GET['id']);
-}
-$data = global_select_single('products', '*', "id='$id'");
-
 ?>
 
 <body id="page-top">
@@ -32,56 +27,34 @@ $data = global_select_single('products', '*', "id='$id'");
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Ubah Franchise</h1>
+                    <h1 class="h3 mb-2 text-gray-800">Tambah Franchise</h1>
 
 
                     <div class="card shadow mb-4 p-4">
-                        <form action="./lib/do_update_product.php" method="POST" class="form-group" enctype="multipart/form-data">
+                        <form action="./lib/do_add_product.php" method="POST" class="form-group" enctype="multipart/form-data">
                             <div class="form-group row">
                                 <div class="col-sm-12 mb-2">
-                                    <input type="hidden" class="form-control" name="id" id="id" value="<?php echo $data['id'] ?>">
                                     <label for="title">Judul</label>
-                                    <input type="text" class="form-control" name="title" id="title" value="<?php echo $data['title'] ?>">
+                                    <input type="text" class="form-control" name="title" id="title" placeholder="Masukkan Judul Franchise">
                                 </div>
                                 <div class="col-sm-12 mb-2">
                                     <label for="price">Harga</label>
-                                    <input type="text" class="form-control" name="price" id="price" value="<?php echo $data['price'] ?>">
+                                    <input type="text" class="form-control" name="price" id="price" placeholder="Masukkan Harga Franchise">
                                 </div>
                                 <div class="col-sm-12 mb-2">
                                     <label for="icon">Icon</label>
-                                    <input type="hidden" name="def_icon" value="<?php echo $data['icon'] ?>">
+                                    <input type="hidden" name="def_icon">
                                     <input type="file" class="form-control" name="icon" id="icon" accept="image/*" onchange="displayIcon(this)" />
-                                    <?php 
-                                        if ($data['icon'] === null or $data['icon'] === '') {
-                                            echo '<img id="uploadedIcon" src="" alt="Uploaded Icon" style="width: 50px; max-width: 100%; display: none; margin-top: 10px;">';
-                                        } else {
-                                           echo '<img id="uploadedIcon" src="'. $baseUrl . $data['icon'].'" alt="Uploaded Image" style="width: 50px; max-width: 100%; margin-top: 10px;">';
-                                        }
-                                    ?>
+                                    <img id="uploadedIcon" src="" alt="Uploaded Icon" style="width: 50px; max-width: 100%; display: none; margin-top: 10px;">
                                 </div>
                                 <div class="col-sm-12 mb-2">
                                     <label for="poster">Banner</label>
-                                    <input type="hidden" name="def_poster" value="<?php echo $data['image'] ?>">
                                     <input type="file" class="form-control" name="poster" id="poster" accept="image/*" onchange="displayImage(this)" />
-                                    <?php 
-                                        if ($data['image'] === null or $data['image'] === '') {
-                                            echo '<img id="uploadedImage" src="" alt="Uploaded Image" style="width: 200px; max-width: 100%; display: none; margin-top: 10px;">';
-                                        } else {
-                                           echo '<img id="uploadedImage" src="'. $baseUrl . $data['image'].'" alt="Uploaded Image" style="width: 200px; max-width: 100%; margin-top: 10px;">';
-                                        }
-                                    ?>
+                                    <img id="uploadedImage" src="" alt="Uploaded Image" style="width: 200px; max-width: 100%; display: none; margin-top: 10px;">
                                 </div>
                                 <div class="col-sm-12 mb-2">
                                     <label for="description">Deskripsi</label>
-                                    <textarea class="form-control ckeditor"  name="description" id="description" cols="30" rows="10"><?php echo $data['description'] ?></textarea>
-                                </div>
-                                <div class="col-sm-12 mb-2">
-                                    <label for="status">Status</label>
-                                    <select name="status" id="status" class="form-control">
-                                        <option value="<?php echo $data['status'] ?>" selected><?php echo $data['status'] !== null ?  $data['status'] : "-- Pilih Status --" ?></option>
-                                        <option value="active">Active</option>
-                                        <option value="inactive">Inactive</option>
-                                    </select>
+                                    <textarea class="form-control ckeditor"  name="description" id="description" cols="30" rows="10"></textarea>
                                 </div>
                             </div>
                             <hr>
