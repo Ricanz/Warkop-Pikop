@@ -48,14 +48,26 @@ $data = global_select_single('products', '*', "id='$id'");
                                     <input type="text" class="form-control" name="price" id="price" value="<?php echo $data['price'] ?>">
                                 </div>
                                 <div class="col-sm-12 mb-2">
+                                    <label for="icon">Icon</label>
+                                    <input type="hidden" name="def_icon" value="<?php echo $data['icon'] ?>">
+                                    <input type="file" class="form-control" name="icon" id="icon" accept="image/*" onchange="displayIcon(this)" />
+                                    <?php 
+                                        if ($data['icon'] === null or $data['icon'] === '') {
+                                            echo '<img id="uploadedIcon" src="" alt="Uploaded Icon" style="width: 50px; max-width: 100%; display: none; margin-top: 10px;">';
+                                        } else {
+                                           echo '<img id="uploadedIcon" src="'. $baseUrl . $data['icon'].'" alt="Uploaded Image" style="width: 50px; max-width: 100%; margin-top: 10px;">';
+                                        }
+                                    ?>
+                                </div>
+                                <div class="col-sm-12 mb-2">
                                     <label for="poster">Banner</label>
                                     <input type="hidden" name="def_poster" value="<?php echo $data['image'] ?>">
-                                    <input type="file" class="form-control" name="poster" id="poster" accept="image/*,application/pdf" onchange="displayImage(this)" />
+                                    <input type="file" class="form-control" name="poster" id="poster" accept="image/*" onchange="displayImage(this)" />
                                     <?php 
                                         if ($data['image'] === null or $data['image'] === '') {
-                                            echo '<img id="uploadedImage" src="" alt="Uploaded Image" style="width: 300px; max-width: 100%; display: none; margin-top: 10px;">';
+                                            echo '<img id="uploadedImage" src="" alt="Uploaded Image" style="width: 200px; max-width: 100%; display: none; margin-top: 10px;">';
                                         } else {
-                                           echo '<img id="uploadedImage" src="'. $baseUrl . $data['image'].'" alt="Uploaded Image" style="width: 300px; max-width: 100%; margin-top: 10px;">';
+                                           echo '<img id="uploadedImage" src="'. $baseUrl . $data['image'].'" alt="Uploaded Image" style="width: 200px; max-width: 100%; margin-top: 10px;">';
                                         }
                                     ?>
                                 </div>
@@ -109,6 +121,20 @@ $data = global_select_single('products', '*', "id='$id'");
                 reader.onload = function(e) {
                     uploadedImage.src = e.target.result;
                     uploadedImage.style.display = 'block';
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+        function displayIcon(input) {
+            var uploadedIcon = document.getElementById('uploadedIcon');
+
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function(e) {
+                    uploadedIcon.src = e.target.result;
+                    uploadedIcon.style.display = 'block';
                 };
 
                 reader.readAsDataURL(input.files[0]);

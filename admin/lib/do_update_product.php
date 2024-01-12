@@ -23,6 +23,21 @@ if (isset($_POST['submit'])) {
         $film['image'] = $uploadedPath;
     } 
 
+    if (isset($_FILES["icon"])) {
+        $input_icon = $_FILES["icon"];
+        if (strlen($input_icon["name"]) > 0) {
+            $uploadedIconPath = uploadFoto($_FILES["icon"], $targetDirectory, $allowedExtensions, $maxFileSize);
+    
+            if ($uploadedIconPath) {
+                echo "Path file yang diunggah: " . $uploadedIconPath;
+            }
+        } else { 
+            $uploadedIconPath = $_POST["def_icon"];
+        }
+            
+        $film['icon'] = $uploadedIconPath;
+    } 
+
     $id = $_POST['id'];
 
     $film['title'] = $_POST['title'];
